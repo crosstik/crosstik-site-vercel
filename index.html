@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crosstik — Official Site</title>
+  <meta name="description" content="Crosstik — drummer, DJ, producer. Funky, groovy, bouncy bass music. Listen on Spotify, SoundCloud, watch on YouTube." />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react-icons@4.12.0/dist/react-icons.min.js"></script>
+  <style>
+    html, body { background: #000; color: #fff; }
+    .glass { background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
+  </style>
+</head>
+<body class="bg-black text-white">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { FaInstagram, FaSpotify, FaSoundcloud, FaTiktok, FaFacebookF, FaYoutube, FaBandcamp, FaApple } = ReactIcons;
+    const { SiTidal, SiBeatport } = ReactIcons;
+
+    const socials = [
+      { icon: <FaInstagram />, url: 'https://www.instagram.com/crosstik_music/' },
+      { icon: <FaSpotify />, url: 'https://open.spotify.com/artist/39g6DHfvpQRAIV5FkfPdFH?si=5ZNxdugrTaO-mrPxw1lawg' },
+      { icon: <FaSoundcloud />, url: 'https://soundcloud.com/crosstik' },
+      { icon: <FaTiktok />, url: 'https://www.tiktok.com/@crosstik_music' },
+      { icon: <FaFacebookF />, url: 'https://www.facebook.com/Crosstik' },
+      { icon: <FaYoutube />, url: 'https://www.youtube.com/channel/UC9wG4oD9BKYtNKgnm_WJvsQ' },
+      { icon: <SiTidal />, url: 'https://tidal.com/browse/artist/20157008' },
+      { icon: <SiBeatport />, url: 'https://www.beatport.com/artist/crosstik/877956' },
+      { icon: <FaBandcamp />, url: 'https://crosstik.bandcamp.com' },
+      { icon: <FaApple />, url: 'https://music.apple.com/us/artist/crosstik/1515395741' },
+    ];
+
+    function Header() {
+      return (
+        <header className="fixed top-0 inset-x-0 z-50 glass border-b border-white/10">
+          <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
+            <div className="flex items-center gap-3">
+              <img src="assets/CROSSTIK just name white.png" alt="Crosstik" className="h-8 w-auto" />
+            </div>
+            <nav className="flex items-center gap-6">
+              <ul className="hidden md:flex gap-6 text-sm opacity-90">
+                <li><a href="#music" className="hover:underline">Music</a></li>
+                <li><a href="#media" className="hover:underline">Media</a></li>
+                <li><a href="#shop" className="hover:underline">Shop</a></li>
+                <li><a href="#contact" className="hover:underline">Contact</a></li>
+              </ul>
+              <div className="flex gap-3 text-lg">
+                {socials.map((s, i) => (
+                  <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition">
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+            </nav>
+          </div>
+        </header>
+      );
+    }
+
+    function Hero() {
+      return (
+        <section className="pt-24">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6">
+            <div>
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Crosstik</h1>
+              <p className="mt-4 text-lg md:text-xl opacity-80 max-w-xl">Funky, groovy, bouncy electronic bass music — drummer. DJ. Producer.</p>
+              <div className="mt-6 flex gap-4">
+                <a href="#music" className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 px-5 py-3 rounded-2xl font-semibold">Listen Now</a>
+                <a href="#media" className="inline-flex items-center gap-2 border border-white/20 px-5 py-3 rounded-2xl">Media</a>
+              </div>
+            </div>
+            <div className="relative">
+              <img src="https://drive.google.com/uc?export=view&id=1r9-jjKhfPgXRbrLgnXrOPHCgecEECwIj" alt="Crosstik hero" className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl shadow-2xl mx-auto" />
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-tr from-black/40 via-transparent to-purple-600/20" />
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function MusicSection() {
+      return (
+        <section id="music" className="max-w-6xl mx-auto py-16 px-6">
+          <h2 className="text-3xl font-bold mb-6">Music & Videos</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-neutral-900 rounded-xl overflow-hidden shadow">
+              <iframe style={{borderRadius:'12px'}} src="https://open.spotify.com/embed/track/6bHuhLd7ITHJY8DksuwsM7?utm_source=generator" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify Player - 1"></iframe>
+            </div>
+            <div className="bg-neutral-900 rounded-xl overflow-hidden shadow">
+              <iframe style={{borderRadius:'12px'}} src="https://open.spotify.com/embed/track/281yVhR329J9AHBUEEAJFa?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify Player - 2"></iframe>
+            </div>
+            <div className="bg-neutral-900 rounded-xl overflow-hidden shadow lg:col-span-2">
+              <iframe style={{borderRadius:'12px'}} src="https://open.spotify.com/embed/track/7ItSNYUVQmF0Zmk4ZFccXw?utm_source=generator" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify Player - 3"></iframe>
+            </div>
+
+            <div className="bg-neutral-900 rounded-xl overflow-hidden shadow lg:col-span-2">
+              <div className="aspect-video w-full">
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/rvQbWpLcG9o?si=01YWOJ3jpKsIwvgs" title="YouTube video 1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              </div>
+            </div>
+            <div className="bg-neutral-900 rounded-xl overflow-hidden shadow lg:col-span-2">
+              <div className="aspect-video w-full">
+                <iframe className="w-full h-full" src="https://www.youtube.com/embed/YIVLAOwIhvo?si=7ctXDTOvC_e-nHt3" title="YouTube video 2" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              </div>
+            </div>
+
+            <div className="bg-neutral-900 rounded-xl overflow-hidden shadow">
+              <iframe width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1993232399&color=%23373536&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" title="SoundCloud - Wicked & Dark"></iframe>
+            </div>
+            <div className="bg-neutral-900 rounded-xl overflow-hidden shadow">
+              <iframe width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1899419256&color=%23333f44&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" title="SoundCloud - Trial By Fire"></iframe>
+            </div>
+            <div className="bg-neutral-900 rounded-xl overflow-hidden shadow lg:col-span-2">
+              <iframe width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2134353789&color=%231c1c1c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" title="SoundCloud - Victory Lap Four Remix"></iframe>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function MediaSection() {
+      const gallery = [
+        'https://www.dropbox.com/scl/fi/3qikze0lm1qqybvg4qbsx/DSC07036.jpg?rlkey=pn5h1ev4pchb0cnblvubpwstn&st=x9dt97ql&dl=1',
+        'https://www.dropbox.com/scl/fi/xsg0iu8t5ow5me390h9u1/DSC07064.jpg?rlkey=8ku7ezwjs8iaijbtokk00cx6c&st=n3iqv8fa&dl=1',
+        'https://www.dropbox.com/scl/fi/djm10adf26iem8o1hzrcj/CROSSTIK_SEP2024_HSMITHMEDIA-32.jpg?rlkey=yhz8zgvvxfh5hc5gqj51fkeuh&st=bvjvryz4&dl=1',
+        'https://www.dropbox.com/scl/fi/u66ehkku7yt1mafctm9qv/CROSSTIK_SEP2024_HSMITHMEDIA-31.jpg?rlkey=ro5fhpwv3lz2oy2l7hld5e8uf&st=8ifcml64&dl=1',
+        'https://www.dropbox.com/scl/fi/6kcelb2ia6hnsyn7xl0y9/FM-REBIRTH-CCSCOTT-HD-06796.png?rlkey=23i7ugo0l8lnp4x2c3swpybt8&st=dglq2aqi&dl=1',
+        'https://www.dropbox.com/scl/fi/8jyc3dm3xbzxv3w74khxx/sicksick2R0A8055-Enhanced-NR-copy.jpg?rlkey=se8t83rwwms5qczb9ynd2ar2p&st=4n52on4e&dl=1',
+      ];
+      return (
+        <section id="media" className="max-w-6xl mx-auto py-16 px-6">
+          <h2 className="text-3xl font-bold">Media</h2>
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+            {gallery.map((src, i) => (
+              <figure key={i} className="overflow-hidden rounded-xl bg-neutral-900 shadow hover:shadow-2xl hover:-translate-y-0.5 transition">
+                <img loading="lazy" src={src} alt={`Crosstik photo ${i+1}`} className="w-full h-full object-cover aspect-square md:aspect-[4/3]" />
+                <figcaption className="sr-only">Photo {i+1} in Crosstik gallery.</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    function ShopSection() {
+      const merch = [
+        { id: 1, title: 'Crosstik - Logo Hoodie', price: '$55', img: 'https://via.placeholder.com/800x600?text=Hoodie', url: '#' },
+        { id: 2, title: 'Crosstik - Tour Tee', price: '$28', img: 'https://via.placeholder.com/800x600?text=Tour+Tee', url: '#' },
+        { id: 3, title: 'Sticker Pack', price: '$8', img: 'https://via.placeholder.com/800x600?text=Stickers', url: '#' },
+      ];
+      return (
+        <section id="shop" className="max-w-6xl mx-auto py-16 px-6">
+          <h2 className="text-3xl font-bold">Shop</h2>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {merch.map(item => (
+              <figure key={item.id} className="bg-neutral-900 rounded-xl overflow-hidden shadow hover:shadow-2xl hover:-translate-y-0.5 transition">
+                <img loading="lazy" src={item.img} alt={item.title} className="w-full h-full object-cover aspect-[4/3]" />
+                <figcaption className="p-4 flex items-center justify-between">
+                  <div>
+                    <div className="font-semibold">{item.title}</div>
+                    <div className="text-sm opacity-70">{item.price}</div>
+                  </div>
+                  <a href={item.url} className="text-sm underline hover:text-pink-400">Buy</a>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="mt-12 border-t border-white/10">
+          <div className="max-w-6xl mx-auto py-8 px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-sm opacity-80">© {new Date().getFullYear()} Crosstik. All rights reserved.</div>
+            <div className="text-sm opacity-80">Site design inspired by Illenium</div>
+          </div>
+        </footer>
+      );
+    }
+
+    function App() {
+      return (
+        <main className="bg-black text-white min-h-screen">
+          <Header />
+          <Hero />
+          <MusicSection />
+          <MediaSection />
+          <ShopSection />
+          <section id="contact" className="bg-neutral-900 mt-8">
+            <div className="max-w-6xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold">Booking & Press</h3>
+                <p className="mt-2 opacity-80">Email: <a href="mailto:booking@crosstik.com" className="underline">booking@crosstik.com</a></p>
+              </div>
+              <form className="flex flex-col gap-3">
+                <input className="bg-black/30 rounded-md p-3" placeholder="Name" />
+                <input className="bg-black/30 rounded-md p-3" placeholder="Email" />
+                <textarea className="bg-black/30 rounded-md p-3" placeholder="Message" rows="4" />
+                <button className="self-start mt-2 bg-gradient-to-r from-pink-500 to-purple-600 px-4 py-2 rounded-lg">Send</button>
+              </form>
+            </div>
+          </section>
+          <Footer />
+        </main>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

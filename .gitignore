@@ -1,0 +1,9 @@
+.vercel
+node_modules
+node_modules
+node_modules
+.next
+.DS_Store
+pnpm-lock.yaml
+yarn-error.log
+.vercel
